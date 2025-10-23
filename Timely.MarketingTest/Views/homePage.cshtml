@@ -1,23 +1,23 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+﻿@using Umbraco.Cms.Core.Models
+@using Umbraco.Extensions
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
 @{
-	Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // Pull in Umbraco values
+    var pageTitle = Model.Value<string>("pageTitle") ?? "Timely";
+    var mainParagraph = Model.Value<string>("mainParagraph") ?? "";
+    var rightSideParagraph = Model.Value<string>("rightSideParagraph") ?? "";
+
+    // Media Picker (single image)
+    var hero = Model.Value<IPublishedContent>("heroImage");
+    var heroUrl = hero?.Url() ?? "/images/fallback-hero.jpg";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Homepage title</title>
-  <link rel="stylesheet" href="/assets/main.css" />
-</head>
-<body>
-
-  <div id="react-root"></div>
-
-  <h1>@Model.Value("pageTitle")</h1>
-  <p>This is a basic paragraph</p>
-
-<script src="/assets/main.js"></script>
-</body>
-</html>
+<div id="react-root"
+     data-page-title="@pageTitle"
+     data-hero-url="@heroUrl"
+     data-main-paragraph="@mainParagraph"
+     data-right-side-paragraph="@rightSideParagraph">
+</div>
