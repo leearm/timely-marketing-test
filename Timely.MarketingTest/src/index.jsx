@@ -8,16 +8,16 @@ function PokemonCard({ pokemon }) {
   const weightInKg = (pokemon.weight / 10).toFixed(1);
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-shadow">
-      <h3 className="text-xl font-bold text-gray-900 mb-6">{pokemon.name}</h3>
-      <div className="space-y-2 text-sm">
-        <p className="text-gray-700">
+    <div className="bg-pokemon-red border border-8 border-pokemon-yellow rounded-lg p-4">
+      <h3 className="text-2xl font-bold text-black-900 mb-[5rem]">{pokemon.name}</h3>
+      <div className="space-y-[0.3rem] text-sm">
+        <p className="text-black-800">
           <span className="font-semibold">Species:</span> {pokemon.species}
         </p>
-        <p className="text-gray-700">
+        <p className="text-black-800">
           <span className="font-semibold">Height:</span> {heightInMeters}m
         </p>
-        <p className="text-gray-700">
+        <p className="text-black-800">
           <span className="font-semibold">Weight:</span> {weightInKg}kg
         </p>
       </div>
@@ -55,7 +55,7 @@ function PokemonList() {
 
   if (loading) {
     return (
-      <div className="text-center py-12">
+      <div className="text-center text-pokemon-yellow py-12">
         <p className="text-gray-600">Loading Pokemon...</p>
       </div>
     );
@@ -63,7 +63,7 @@ function PokemonList() {
 
   if (error) {
     return (
-      <div className="text-center py-12">
+      <div className="text-center text-pokemon-yellow py-12">
         <p className="text-red-600">Error: {error}</p>
       </div>
     );
@@ -78,9 +78,9 @@ function PokemonList() {
   );
 }
 
-function HomePage({ pageTitle, heroUrl, mainParagraph, rightSideParagraph }) {
+function HomePage({ pageTitle, heroUrl, mainParagraph, subParagraph, rightSideParagraph }) {
   return (
-    <main className="w-full">
+    <main className="bg-timely-pink w-full">
       {/* Full-width hero section */}
       <header className="relative w-full h-[450px]">
         <img
@@ -92,19 +92,22 @@ function HomePage({ pageTitle, heroUrl, mainParagraph, rightSideParagraph }) {
 
       {/* column section */}
       {/* Left column */}
-      <section className="mx-auto max-w-7xl px-6 py-12">
+      <section className="bg-timely-pink mx-auto max-w-7xl px-6 py-12">
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="w-full lg:w-3/5">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{pageTitle}</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <h2 className="text-4xl font-bold text-black-900 mb-8">{pageTitle}</h2>
+            <p className="text-lg text-black-700 leading-relaxed pb-4">
               {mainParagraph || ""}
+            </p>
+            <p className="text-sm text-black-700 leading-relaxed">
+              {subParagraph || ""}
             </p>
           </div>
 
       {/* Right column */}
           <div className="w-full lg:w-2/5">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Right Column</h3>
-            <p className="text-gray-600">
+            <h3 className="text-xl font-semibold text-black-900 mb-4">Right Column</h3>
+            <p className="text-black-700">
               {rightSideParagraph || ""}
             </p>
           </div>
@@ -112,8 +115,7 @@ function HomePage({ pageTitle, heroUrl, mainParagraph, rightSideParagraph }) {
       </section>
 
       {/* Pokemon Block List */}
-      <section className="mx-auto max-w-7xl px-6 py-12">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8">Pokemon Collection</h2>
+      <section className="bg-timely-pink mx-auto max-w-7xl px-6 py-12">
         <PokemonList />
       </section>
     </main>
@@ -126,6 +128,7 @@ if (el) {
     pageTitle: el.dataset.pageTitle,
     heroUrl: el.dataset.heroUrl,
     mainParagraph: el.dataset.mainParagraph,
+    subParagraph: el.dataset.subParagraph,
     rightSideParagraph: el.dataset.rightSideParagraph
   };
   createRoot(el).render(<HomePage {...props} />);

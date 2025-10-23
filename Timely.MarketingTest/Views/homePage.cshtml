@@ -8,6 +8,7 @@
     // Pull in Umbraco values
     var pageTitle = Model.Value<string>("pageTitle") ?? "Timely";
     var mainParagraph = Model.Value<string>("mainParagraph") ?? "";
+    var subParagraph = Model.Value<string>("subParagraph") ?? "";
     var rightSideParagraph = Model.Value<string>("rightSideParagraph") ?? "";
 
     // Media Picker (single image)
@@ -19,5 +20,6 @@
      data-page-title="@pageTitle"
      data-hero-url="@heroUrl"
      data-main-paragraph="@mainParagraph"
+     data-sub-paragraph="@subParagraph"
      data-right-side-paragraph="@rightSideParagraph">
 </div>
