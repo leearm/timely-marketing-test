@@ -485,3 +485,4 @@ umbraco-package-schema.json
 /wwwroot/assets/main.js
 /wwwroot/assets/main.css
 /wwwroot/assets/*.map
+/wwwroot/assets/*.LICENSE.txt
