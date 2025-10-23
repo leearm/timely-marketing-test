@@ -480,3 +480,9 @@ umbraco-package-schema.json
 
 # Media files
 /wwwroot/media/
+
+# Webpack build output
+/wwwroot/assets/main.js
+/wwwroot/assets/main.css
+/wwwroot/assets/*.map
+/wwwroot/assets/*.LICENSE.txt
