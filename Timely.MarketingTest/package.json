@@ -1,0 +1,32 @@
+{
+  "name": "timely.marketingtest",
+  "version": "1.0.0",
+  "description": "This project is a technical software engineering test for the Marketing team's main brand website. Written against the [Umbraco CMS](https://docs.umbraco.com/umbraco-cms), this test examines how well a candidate knows the Umbraco API, what their coding standards and biases are, and how they approach basic problem solving.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --watch --mode development",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "@tailwindcss/postcss": "^4.1.15",
+    "autoprefixer": "^10.4.21",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
+    "mini-css-extract-plugin": "^2.9.4",
+    "postcss": "^8.5.6",
+    "postcss-loader": "^8.2.0",
+    "tailwindcss": "^4.1.15",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
