@@ -82,7 +82,7 @@ function HomePage({ pageTitle, heroUrl, mainParagraph, subParagraph, rightSidePa
   return (
     <main className="bg-timely-pink w-full">
       {/* Full-width hero section */}
-      <header className="relative w-full h-[450px]">
+      <header className="relative w-full h-[550px]">
         <img
           src={heroUrl}
           alt=""
